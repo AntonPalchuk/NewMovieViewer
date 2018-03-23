@@ -176,7 +176,8 @@ body{
 }
 
 .span{
-  /* padding-left: 30px; */
+  border: 1px solid;
+  padding: 3px;
 }
 
 .nameAndYearFilms div{

@@ -61,13 +61,6 @@
               self = this;
               button.addEventListener("click",function(){
                 advanceMode.classList.add("advanceModeNone");
-                if(localStorage.getItem('locationIcon') === "table"){
-                  divFilms.classList.remove("divFilms");
-                  divFilms.classList.add("divFilmsTable")
-                }else{
-                  divFilms.classList.add("divFilms");
-                  divFilms.classList.remove("divFilmsTable")
-                }
                 if(input.value === ""){
                   button.setAttribute("data-toggle", "popover");
                   button.setAttribute("data-placement", "top");
@@ -110,6 +103,13 @@
       },
 
       draw: function draw(movies){
+        if(localStorage.getItem('locationIcon') === "table"){
+          divFilms.classList.remove("divFilms");
+          divFilms.classList.add("divFilmsTable")
+        }else{
+          divFilms.classList.add("divFilms");
+          divFilms.classList.remove("divFilmsTable")
+        }
         filmList.classList.remove("none");
         mainDiv.classList.add("none");
         loading.classList.add("none");
@@ -175,8 +175,8 @@
             <div class="${localStorage.getItem('locationIcon')==='table'?'nameAndYearFilmsTable':'nameAndYearFilms'}" data-id="${movie.imdbID}">
 
               <div class="posterMini">
-              <img class = "favoriteIconMini" id="${movie.imdbID}" src="${isFavorite?'red.png':'3.png'}"/>
-                <img src="${movie.Poster==="N/A"?'unnamed.jpg':movie.Poster}"/>
+              <img class = "favoriteIconMini" id="${movie.imdbID}" src="${isFavorite?'images/red.png':'images/3.png'}"/>
+                <img src="${movie.Poster==="N/A"?'images/unnamed.jpg':movie.Poster}"/>
               </div>
               <div class="allSpansNameAndYear">
                 <div class="span">${movie.Title}(${movie.Year})</div>
@@ -197,7 +197,7 @@
               <div class="contantFilm">
                 <div>
                   <h2>${movie.Title}</h2>
-                  <img class="favoriteIcon disabled" item-movie="${movie.imdbID}" src="${isFavorite?'red.png':'3.png'}"/>
+                  <img class="favoriteIcon disabled" item-movie="${movie.imdbID}" src="${isFavorite?'images/red.png':'images/3.png'}"/>
                 </div>
                 <div>
                 <span><b>Actors:</b> ${movie.Actors}</span><br>
@@ -321,6 +321,7 @@
         })
         home.addEventListener("click",function(){
           document.getElementsByClassName("option")[0].classList.add("none");
+          showFilm.classList.add("none");
           divFilms.innerHTML = "";
           buttonMore.classList.remove("none");
           const input = document.getElementById("input");
