@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <meta charset="utf-8">
+    <title>Fetch</title>
+  </head>
+  <body>
+    <nav role='navigation' class="header">
+      <ul>
+        <li><a href="#" class="home">Home</a></li>
+        <li><a href="#" class="favorite">Favorite</a></li>
+        <li><a href="#" class="options">Options</a></li>
+        <!-- <li><a href="#">Contact Us</a></li> -->
+      </ul>
+    </nav>
+    <div class="option none">
+      <span>Location icons moviess:</span>
+      <input type="radio" name="locationIcon" value="column" id="column">Column
+      <input type="radio" name="locationIcon" value="table" id="table">Table
+    </div>
+    <div class="mainDiv">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search for..." id="input">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button" id="button">Go!</button>
+          </span>
+        </div>
+        <a class="a">Advance mode</a>
+          <div class="advanceMode advanceModeNone">
+            <div class="input-group" id="year">
+              <input type="number" class="form-control" placeholder="Write year" id="yearFilm">
+            </div>
+            <div class="input-group" id="type">
+              <input type="text" class="form-control" placeholder="Choose type" id="typeFilm" list="typeList">
+              <datalist id="typeList">
+                <option>Movie</option>
+                <option>Series</option>
+              </datalist>
+            </div>
+        </div>
+      </div>
+      <span class="error none">Sorry but with this value nothing is found!</span>
+    </div>
+    <div id="filmList" class="none">
+      <div class="divFilms">
+      </div>
+      <div class="buttons">
+        <button type="submit" id="more" class="noneImortant black">More</button>
+
+      </div>
+    </div>
+    <div class="showFilm">
+    </div>
+    <div class="containerLoader">
+      <div class="loader none"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	  <script src="js/lib/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
